@@ -1,1 +1,16 @@
+<h1><%= @post.title %></h1>
 
+<h3><%= @post.content %></h3>
+
+categories
+<ul>
+<% @post.categories.each do |category| %>
+    <li><%= category.name %></li>
+<% end %>
+</ul>
+
+<%= link_to 'new', new_post_path %>
+
+<%=  Category.all.each do |category| %>
+    <li><%= category.name %></li>
+<% end %>
